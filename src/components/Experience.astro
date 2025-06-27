@@ -1,0 +1,234 @@
+---
+import { Calendar, MapPin, Briefcase, GraduationCap } from 'lucide-react';
+
+const experiences = [
+  {
+    id: 1,
+    type: 'work',
+    title: 'Développeur Fullstack Senior',
+    company: 'TechCorp Solutions',
+    location: 'Paris, France',
+    period: '2022 - Présent',
+    duration: '2 ans',
+    description: 'Développement et maintenance d\'applications web complexes pour des clients internationaux. Leadership technique sur plusieurs projets stratégiques.',
+    achievements: [
+      'Réduction de 40% du temps de chargement des applications',
+      'Encadrement d\'une équipe de 4 développeurs junior',
+      'Migration vers une architecture microservices',
+      'Implémentation de CI/CD robuste'
+    ],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS']
+  },
+  {
+    id: 2,
+    type: 'work',
+    title: 'Développeur Frontend',
+    company: 'StartupInnovante',
+    location: 'Lyon, France',
+    period: '2020 - 2022',
+    duration: '2 ans',
+    description: 'Développement d\'interfaces utilisateur modernes et responsives pour une plateforme SaaS en forte croissance.',
+    achievements: [
+      'Développement de l\'interface complète de la v2.0',
+      'Amélioration de 60% des métriques UX',
+      'Mise en place de tests automatisés',
+      'Intégration de design system cohérent'
+    ],
+    technologies: ['Vue.js', 'TypeScript', 'Tailwind CSS', 'Jest']
+  },
+  {
+    id: 3,
+    type: 'education',
+    title: 'Master en Informatique',
+    company: 'École Supérieure d\'Informatique',
+    location: 'Paris, France',
+    period: '2018 - 2020',
+    duration: '2 ans',
+    description: 'Spécialisation en développement web et architectures distribuées. Projet de fin d\'études sur l\'optimisation des performances web.',
+    achievements: [
+      'Mention Très Bien',
+      'Projet de recherche sur les PWA',
+      'Stage de 6 mois chez TechCorp',
+      'Présentation à la conférence DevFest'
+    ],
+    technologies: ['Java', 'Spring', 'React', 'MongoDB']
+  },
+  {
+    id: 4,
+    type: 'work',
+    title: 'Développeur Junior',
+    company: 'WebAgency Pro',
+    location: 'Remote',
+    period: '2019 - 2020',
+    duration: '1 an',
+    description: 'Développement de sites web sur mesure pour PME et créateurs. Apprentissage des bonnes pratiques du développement web.',
+    achievements: [
+      'Réalisation de 15+ sites web',
+      'Formation aux frameworks modernes',
+      'Optimisation SEO et performances',
+      'Collaboration directe avec les clients'
+    ],
+    technologies: ['HTML/CSS', 'JavaScript', 'WordPress', 'PHP']
+  }
+];
+---
+
+<section id="experience" class="section-padding">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        Mon <span class="gradient-text">Parcours</span>
+      </h2>
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+        Découvrez mon évolution professionnelle et mes expériences marquantes.
+      </p>
+    </div>
+    
+    <!-- Timeline -->
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Vertical line -->
+      <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform md:-translate-x-0.5"></div>
+      
+      <!-- Timeline Items -->
+      <div class="space-y-12">
+        {experiences.map((exp, index) => (
+          <div 
+            class={`timeline-item animate-fade-in-up opacity-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+            style={`animation-delay: ${index * 200}ms;`}
+          >
+            <div class="flex items-start space-x-4 md:space-x-0 md:flex md:items-center md:space-x-8">
+              <!-- Timeline dot -->
+              <div class="relative flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-slate-800 border-4 border-blue-500 flex items-center justify-center z-10 relative">
+                  {exp.type === 'work' ? (
+                    <Briefcase class="w-4 h-4 text-blue-400" />
+                  ) : (
+                    <GraduationCap class="w-4 h-4 text-purple-400" />
+                  )}
+                </div>
+              </div>
+              
+              <!-- Content Card -->
+              <div class={`flex-1 md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                <div class="bg-slate-800/50 rounded-2xl p-6 card-hover">
+                  <!-- Header -->
+                  <div class="mb-4">
+                    <div class="flex items-center gap-2 text-sm text-slate-400 mb-2">
+                      <Calendar class="w-4 h-4" />
+                      <span>{exp.period}</span>
+                      <span class="text-slate-600">•</span>
+                      <span>{exp.duration}</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-white mb-1">
+                      {exp.title}
+                    </h3>
+                    
+                    <div class="flex items-center gap-2 text-blue-400 font-medium mb-2">
+                      <span>{exp.company}</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 text-slate-400 text-sm">
+                      <MapPin class="w-4 h-4" />
+                      <span>{exp.location}</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Description -->
+                  <p class="text-slate-300 leading-relaxed mb-4">
+                    {exp.description}
+                  </p>
+                  
+                  <!-- Achievements -->
+                  <div class="mb-4">
+                    <h4 class="text-sm font-semibold text-white mb-2">Réalisations clés :</h4>
+                    <ul class="space-y-1">
+                      {exp.achievements.map((achievement) => (
+                        <li class="flex items-start gap-2 text-sm text-slate-300">
+                          <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <!-- Technologies -->
+                  <div>
+                    <h4 class="text-sm font-semibold text-white mb-2">Technologies :</h4>
+                    <div class="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-md">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Spacer for alignment on desktop -->
+              <div class="hidden md:block md:w-5/12"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="text-center mt-16">
+      <div class="animate-fade-in-up opacity-0 animation-delay-600">
+        <h3 class="text-2xl font-semibold mb-4 text-white">Intéressé par mon profil ?</h3>
+        <p class="text-slate-400 mb-6 max-w-2xl mx-auto">
+          Je suis toujours ouvert aux nouvelles opportunités et aux projets passionnants. 
+          N'hésitez pas à télécharger mon CV ou à me contacter directement.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/cv.pdf" download class="btn-primary">
+            Télécharger mon CV
+          </a>
+          <a href="#contact" class="btn-secondary">
+            Me contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-item {
+    @apply relative;
+  }
+  
+  @media (min-width: 768px) {
+    .timeline-item {
+      @apply flex items-center;
+    }
+    
+    .timeline-item:nth-child(even) .card-hover {
+      @apply transform;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      observer.observe(item);
+    });
+  });
+</script> 

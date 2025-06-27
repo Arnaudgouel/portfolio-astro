@@ -1,0 +1,160 @@
+---
+import { Award, Users, Coffee, Code2 } from 'lucide-react';
+---
+
+<section id="about" class="section-padding bg-slate-900/50">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        À propos de <span class="gradient-text">moi</span>
+      </h2>
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+        Découvrez mon parcours, ma passion pour le développement et ce qui me motive au quotidien.
+      </p>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Column - Text Content -->
+      <div class="space-y-6">
+        <div class="animate-fade-in-left opacity-0">
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Passionné par l'innovation technologique
+          </h3>
+          <p class="text-slate-300 leading-relaxed mb-6">
+            Depuis plus de 5 ans, je développe des solutions web innovantes en combinant 
+            créativité et expertise technique. Mon approche se concentre sur la création 
+            d'expériences utilisateur exceptionnelles avec des performances optimales.
+          </p>
+          <p class="text-slate-300 leading-relaxed mb-6">
+            Spécialisé dans l'écosystème JavaScript moderne, j'accompagne les entreprises 
+            dans leur transformation digitale en créant des applications robustes, scalables 
+            et maintenables.
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            Toujours à l'affût des dernières technologies, je crois fermement en l'apprentissage 
+            continu et au partage de connaissances au sein de la communauté développeur.
+          </p>
+        </div>
+        
+        <!-- Skills Highlights -->
+        <div class="animate-fade-in-left opacity-0 animation-delay-200">
+          <h4 class="text-xl font-semibold mb-4 text-white">Ce que j'aime faire</h4>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span class="text-slate-300">Développement d'applications web modernes</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span class="text-slate-300">Optimisation des performances et SEO</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+              <span class="text-slate-300">Architecture et patterns de conception</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span class="text-slate-300">Mentorat et formation d'équipes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column - Stats and Image -->
+      <div class="space-y-8">
+        <!-- Profile Image Placeholder -->
+        <div class="animate-fade-in-right opacity-0">
+          <div class="relative mx-auto w-80 h-80 rounded-2xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1">
+            <div class="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center">
+              <div class="text-6xl text-slate-600">👨‍💻</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stats Grid -->
+        <div class="animate-fade-in-right opacity-0 animation-delay-200 grid grid-cols-2 gap-6">
+          <div class="bg-slate-800/50 rounded-xl p-6 text-center card-hover">
+            <Award class="w-8 h-8 text-blue-400 mx-auto mb-3" />
+            <div class="text-3xl font-bold text-white mb-1">50+</div>
+            <div class="text-slate-400 text-sm">Projets réalisés</div>
+          </div>
+          
+          <div class="bg-slate-800/50 rounded-xl p-6 text-center card-hover">
+            <Users class="w-8 h-8 text-purple-400 mx-auto mb-3" />
+            <div class="text-3xl font-bold text-white mb-1">20+</div>
+            <div class="text-slate-400 text-sm">Clients satisfaits</div>
+          </div>
+          
+          <div class="bg-slate-800/50 rounded-xl p-6 text-center card-hover">
+            <Coffee class="w-8 h-8 text-pink-400 mx-auto mb-3" />
+            <div class="text-3xl font-bold text-white mb-1">1000+</div>
+            <div class="text-slate-400 text-sm">Cafés bu</div>
+          </div>
+          
+          <div class="bg-slate-800/50 rounded-xl p-6 text-center card-hover">
+            <Code2 class="w-8 h-8 text-green-400 mx-auto mb-3" />
+            <div class="text-3xl font-bold text-white mb-1">5+</div>
+            <div class="text-slate-400 text-sm">Années d'expérience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Philosophy Section -->
+    <div class="mt-20 text-center">
+      <div class="animate-fade-in-up opacity-0 animation-delay-400">
+        <h3 class="text-2xl font-semibold mb-6 text-white">Ma philosophie</h3>
+        <blockquote class="text-xl text-slate-300 italic max-w-4xl mx-auto leading-relaxed">
+          "Le code parfait n'existe pas, mais l'amélioration continue nous en rapproche. 
+          Chaque ligne de code est une opportunité d'apprendre, d'innover et de créer 
+          quelque chose d'extraordinaire."
+        </blockquote>
+        <div class="mt-6">
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Counter animation for stats
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.text-3xl');
+          counters.forEach(counter => {
+            const target = parseInt(counter.textContent.replace(/\D/g, ''));
+            const suffix = counter.textContent.replace(/\d/g, '');
+            let current = 0;
+            const increment = target / 30;
+            
+            const updateCounter = () => {
+              if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current) + suffix;
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target + suffix;
+              }
+            };
+            
+            updateCounter();
+          });
+        }
+      });
+    }, observerOptions);
+    
+    // Observe stats section
+    const statsSection = document.querySelector('#about .grid.grid-cols-2');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  });
+</script> 
