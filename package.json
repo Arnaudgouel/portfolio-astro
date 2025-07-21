@@ -3,11 +3,11 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Portfolio moderne de développeur fullstack créé avec Astro.js",
-  "author": "Votre Nom <votre.email@example.com>",
+  "author": "Arnaud Gouel <gouel.arnaud@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/votre-username/portfolio-astro.git"
+    "url": "https://github.com/Arnaudgouel/portfolio-astro.git"
   },
   "scripts": {
     "dev": "astro dev",
