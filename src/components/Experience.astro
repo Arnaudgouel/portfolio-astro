@@ -5,70 +5,90 @@ const experiences = [
   {
     id: 1,
     type: 'work',
-    title: 'Développeur Fullstack Senior',
-    company: 'TechCorp Solutions',
-    location: 'Paris, France',
-    period: '2022 - Présent',
-    duration: '2 ans',
-    description: 'Développement et maintenance d\'applications web complexes pour des clients internationaux. Leadership technique sur plusieurs projets stratégiques.',
+    title: 'Développeur PHP / Symfony',
+    company: 'Micropole',
+    location: 'Lyon, France',
+    period: '2022-09 -> Présent',
+    duration: '3 ans',
+    description: 'Développement en équipe pour la refonte de l\’application web pour des grands comptes avec Sylius, en TMA et production.',
     achievements: [
-      'Réduction de 40% du temps de chargement des applications',
-      'Encadrement d\'une équipe de 4 développeurs junior',
-      'Migration vers une architecture microservices',
-      'Implémentation de CI/CD robuste'
+      'Optimisation de la performance d\'un PIM de plus de 70% sur une application ecommerce sous Sylius',
+      'Implication active dans la méthode agile qui a permis d\'optimiser la production et d\'améliorer la qualité du produit.',
+      'Mise en place de tests unitaires et fonctionnels',
+      'Implémentation de CI/CD robuste avec Gitlab CI/CD et Docker'
     ],
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS']
+    technologies: ['Symfony', 'Sylius', 'MariaDB', 'Docker', 'Gitlab CI/CD']
   },
   {
     id: 2,
     type: 'work',
-    title: 'Développeur Frontend',
-    company: 'StartupInnovante',
+    title: 'Développeur d\'application web',
+    company: 'Epalia',
     location: 'Lyon, France',
     period: '2020 - 2022',
     duration: '2 ans',
-    description: 'Développement d\'interfaces utilisateur modernes et responsives pour une plateforme SaaS en forte croissance.',
+    description: 'Développement d\'un outil interne de saisie de production, de gestion des travailleurs temporaires', 
     achievements: [
-      'Développement de l\'interface complète de la v2.0',
-      'Amélioration de 60% des métriques UX',
-      'Mise en place de tests automatisés',
-      'Intégration de design system cohérent'
+      'Coréalisation du développement et production d\'une application web interne qui gère les travailleurs temporaires, la saisie de la production, le moteur de calcul des primes de production, les exportations de données pour l\'analyse des données en veillant à minimiser la dette technique.',
+      'Analyse la demande interne, établissement des spécifications techniques',
+      'Mise en place de tests unitaires et fonctionnels afin de garantir l\'intégrité fonctionnelle de l\'application',
     ],
-    technologies: ['Vue.js', 'TypeScript', 'Tailwind CSS', 'Jest']
+    technologies: ['Smyfony', 'Golang', 'Nextjs', 'Tailwind CSS']
   },
   {
     id: 3,
     type: 'education',
-    title: 'Master en Informatique',
-    company: 'École Supérieure d\'Informatique',
-    location: 'Paris, France',
-    period: '2018 - 2020',
+    title: 'Mastere Ingénierie Informatique',
+    company: 'ESGI',
+    location: 'Lyon, France',
+    period: '2023 - 2025',
     duration: '2 ans',
-    description: 'Spécialisation en développement web et architectures distribuées. Projet de fin d\'études sur l\'optimisation des performances web.',
+    description: 'Spécialisation en Ingénierie du Web.',
     achievements: [
-      'Mention Très Bien',
-      'Projet de recherche sur les PWA',
-      'Stage de 6 mois chez TechCorp',
-      'Présentation à la conférence DevFest'
+      '',
+      'Développement de CI/CD',
+      'Hackathon',
+      'DevOps (Terraform, Kubernetes, Docker)',
+      'Green IT',
+      'En alternance',
     ],
-    technologies: ['Java', 'Spring', 'React', 'MongoDB']
+    technologies: ['Rust', 'Symfony', 'React', 'Docker', 'Gitlab CI/CD', 'Nestjs']
   },
   {
     id: 4,
-    type: 'work',
-    title: 'Développeur Junior',
-    company: 'WebAgency Pro',
-    location: 'Remote',
-    period: '2019 - 2020',
+    type: 'education',
+    title: 'Bachelor 3 Ingénierie Informatique',
+    company: 'ESGI',
+    location: 'Lyon, France',
+    period: '2022 - 2023',
     duration: '1 an',
-    description: 'Développement de sites web sur mesure pour PME et créateurs. Apprentissage des bonnes pratiques du développement web.',
+    description: 'Spécialisation en Ingénierie du Web.',
     achievements: [
-      'Réalisation de 15+ sites web',
-      'Formation aux frameworks modernes',
-      'Optimisation SEO et performances',
-      'Collaboration directe avec les clients'
+      'Conception Web Design',
+      'Marketing Digital',
+      'Requetage SQL',
+      'Hackathon',
+      'En alternance',
     ],
-    technologies: ['HTML/CSS', 'JavaScript', 'WordPress', 'PHP']
+    technologies: ['HTML/CSS', 'JavaScript', 'WordPress', 'PHP', 'Figma']
+  },
+  {
+    id: 5,
+    type: 'education',
+    title: 'Graduate: Développeur web et web mobile',
+    company: '2i tech academy',
+    location: 'Lyon, France',
+    period: '2020 - 2022',
+    duration: '2 ans',
+    description: 'Techniques de développement web et mobile',
+    achievements: [
+      'Conception We Design',
+      'Marketing Digital',
+      'Requetage SQL',
+      'Hackathon',
+      'En alternance',
+    ],
+    technologies: ['HTML/CSS', 'JavaScript', 'WordPress', 'PHP', 'Symfony']
   }
 ];
 ---
@@ -85,7 +105,7 @@ const experiences = [
     </div>
     
     <!-- Timeline -->
-    <div class="relative max-w-4xl mx-auto">
+    <div class="relative max-w-5xl mx-auto">
       <!-- Vertical line -->
       <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform md:-translate-x-0.5"></div>
       
@@ -93,17 +113,20 @@ const experiences = [
       <div class="space-y-12">
         {experiences.map((exp, index) => (
           <div 
-            class={`timeline-item animate-fade-in-up opacity-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-            style={`animation-delay: ${index * 200}ms;`}
+            class={`timeline-item animate-fade-in-up opacity-0`}
+            style={`animation-delay: ${index * 300}ms;`}
           >
-            <div class="flex items-start space-x-4 md:space-x-0 md:flex md:items-center md:space-x-8">
+            <div class={`flex ${index % 2 === 0 ? 'md:flex-row-reverse md:justify-end' : 'md:flex-row md:justify-start'} items-start gap-x-4 md:flex md:items-center md:gap-x-8`}>
+              <!-- Spacer for alignment on desktop -->
+              <div class="hidden md:block spacer-desktop"></div>
+
               <!-- Timeline dot -->
               <div class="relative flex-shrink-0">
                 <div class="w-8 h-8 rounded-full bg-slate-800 border-4 border-blue-500 flex items-center justify-center z-10 relative">
                   {exp.type === 'work' ? (
-                    <Briefcase class="w-4 h-4 text-blue-400" />
+                    <Briefcase className="w-4 h-4 text-blue-400" />
                   ) : (
-                    <GraduationCap class="w-4 h-4 text-purple-400" />
+                    <GraduationCap className="w-4 h-4 text-purple-400" />
                   )}
                 </div>
               </div>
@@ -114,7 +137,7 @@ const experiences = [
                   <!-- Header -->
                   <div class="mb-4">
                     <div class="flex items-center gap-2 text-sm text-slate-400 mb-2">
-                      <Calendar class="w-4 h-4" />
+                      <Calendar className="w-4 h-4" />
                       <span>{exp.period}</span>
                       <span class="text-slate-600">•</span>
                       <span>{exp.duration}</span>
@@ -129,7 +152,7 @@ const experiences = [
                     </div>
                     
                     <div class="flex items-center gap-2 text-slate-400 text-sm">
-                      <MapPin class="w-4 h-4" />
+                      <MapPin className="w-4 h-4" />
                       <span>{exp.location}</span>
                     </div>
                   </div>
@@ -166,8 +189,7 @@ const experiences = [
                 </div>
               </div>
               
-              <!-- Spacer for alignment on desktop -->
-              <div class="hidden md:block md:w-5/12"></div>
+              
             </div>
           </div>
         ))}
@@ -180,14 +202,14 @@ const experiences = [
         <h3 class="text-2xl font-semibold mb-4 text-white">Intéressé par mon profil ?</h3>
         <p class="text-slate-400 mb-6 max-w-2xl mx-auto">
           Je suis toujours ouvert aux nouvelles opportunités et aux projets passionnants. 
-          N'hésitez pas à télécharger mon CV ou à me contacter directement.
+          N'hésitez pas à télécharger mon CV ou à me contacter directement sur LinkedIn.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/cv.pdf" download class="btn-primary">
             Télécharger mon CV
           </a>
-          <a href="#contact" class="btn-secondary">
-            Me contacter
+          <a href="https://www.linkedin.com/in/arnaud-gouel" target="_blank" class="btn-secondary">
+            LinkedIn
           </a>
         </div>
       </div>
@@ -201,10 +223,9 @@ const experiences = [
   }
   
   @media (min-width: 768px) {
-    .timeline-item {
-      @apply flex items-center;
+    .spacer-desktop {
+      width: calc(50% - 2rem - 0.95rem);
     }
-    
     .timeline-item:nth-child(even) .card-hover {
       @apply transform;
     }

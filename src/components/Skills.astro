@@ -1,5 +1,6 @@
 ---
-import { Code, Database, Globe, Server, Smartphone, Tools } from 'lucide-react';
+import { Code, Database, Globe, Server, Smartphone, Tools } from "lucide-react";
+import sylius from "../assets/sylius-seeklogo.svg";
 ---
 
 <section id="competences" class="section-padding">
@@ -9,208 +10,248 @@ import { Code, Database, Globe, Server, Smartphone, Tools } from 'lucide-react';
         Mes <span class="gradient-text">Compétences</span>
       </h2>
       <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-        Un aperçu de mes compétences techniques et des technologies que je maîtrise.
+        Un aperçu de mes compétences techniques et des technologies que je
+        maîtrise.
       </p>
     </div>
-    
+
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       <!-- Frontend -->
       <div class="skill-category animate-fade-in-up opacity-0">
         <div class="bg-slate-800/50 rounded-2xl p-8 card-hover h-full">
           <div class="flex items-center mb-6">
-            <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mr-4">
-              <Code class="w-6 h-6 text-blue-400" />
+            <div
+              class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mr-4"
+            >
+              <Code className="w-6 h-6 text-blue-400" />
             </div>
             <h3 class="text-xl font-semibold text-white">Frontend</h3>
           </div>
-          
+
           <div class="space-y-4">
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">React / Next.js</span>
-                <span class="text-blue-400 font-medium">95%</span>
+                <span class="text-slate-300">Twig</span>
+                <span class="text-blue-400 font-medium">90%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress w-[95%] bg-blue-500"></div>
+                <div class="skill-progress w-[90%] bg-blue-500"></div>
               </div>
             </div>
-            
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-slate-300">Javascript</span>
+                <span class="text-purple-400 font-medium">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress w-[90%] bg-purple-500"></div>
+              </div>
+            </div>
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
                 <span class="text-slate-300">Vue.js / Nuxt.js</span>
-                <span class="text-green-400 font-medium">90%</span>
+                <span class="text-green-400 font-medium">75%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress w-[90%] bg-green-500"></div>
+                <div class="skill-progress w-[75%] bg-green-500"></div>
               </div>
             </div>
-            
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">TypeScript</span>
-                <span class="text-purple-400 font-medium">88%</span>
+                <span class="text-slate-300">React / Next.js</span>
+                <span class="text-cyan-400 font-medium">70%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress w-[88%] bg-purple-500"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="flex justify-between mb-2">
-                <span class="text-slate-300">Tailwind CSS</span>
-                <span class="text-cyan-400 font-medium">92%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress w-[92%] bg-cyan-500"></div>
+                <div class="skill-progress w-[70%] bg-cyan-500"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Backend -->
-      <div class="skill-category animate-fade-in-up opacity-0 animation-delay-200">
+      <div
+        class="skill-category animate-fade-in-up opacity-0 animation-delay-200"
+      >
         <div class="bg-slate-800/50 rounded-2xl p-8 card-hover h-full">
           <div class="flex items-center mb-6">
-            <div class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center mr-4">
-              <Server class="w-6 h-6 text-green-400" />
+            <div
+              class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center mr-4"
+            >
+              <Server className="w-6 h-6 text-green-400" />
             </div>
             <h3 class="text-xl font-semibold text-white">Backend</h3>
           </div>
-          
+
           <div class="space-y-4">
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">Node.js / Express</span>
+                <span class="text-slate-300">Symfony</span>
                 <span class="text-green-400 font-medium">90%</span>
               </div>
               <div class="skill-bar">
                 <div class="skill-progress w-[90%] bg-green-500"></div>
               </div>
             </div>
-            
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">Python / Django</span>
+                <span class="text-slate-300">Sylius</span>
                 <span class="text-yellow-400 font-medium">85%</span>
               </div>
               <div class="skill-bar">
                 <div class="skill-progress w-[85%] bg-yellow-500"></div>
               </div>
             </div>
-            
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">API REST / GraphQL</span>
-                <span class="text-pink-400 font-medium">88%</span>
+                <span class="text-slate-300">Doctrine ORM</span>
+                <span class="text-pink-400 font-medium">85%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress w-[88%] bg-pink-500"></div>
+                <div class="skill-progress w-[85%] bg-pink-500"></div>
               </div>
             </div>
-            
-            <div class="skill-item">
-              <div class="flex justify-between mb-2">
-                <span class="text-slate-300">Microservices</span>
-                <span class="text-purple-400 font-medium">80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress w-[80%] bg-purple-500"></div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
-      
+
       <!-- Database & DevOps -->
-      <div class="skill-category animate-fade-in-up opacity-0 animation-delay-400">
+      <div
+        class="skill-category animate-fade-in-up opacity-0 animation-delay-400"
+      >
         <div class="bg-slate-800/50 rounded-2xl p-8 card-hover h-full">
           <div class="flex items-center mb-6">
-            <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4">
-              <Database class="w-6 h-6 text-purple-400" />
+            <div
+              class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4"
+            >
+              <Database className="w-6 h-6 text-purple-400" />
             </div>
             <h3 class="text-xl font-semibold text-white">Database & DevOps</h3>
           </div>
-          
+
           <div class="space-y-4">
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">PostgreSQL / MongoDB</span>
+                <span class="text-slate-300">PostgreSQL / MariaDB</span>
                 <span class="text-blue-400 font-medium">85%</span>
               </div>
               <div class="skill-bar">
                 <div class="skill-progress w-[85%] bg-blue-500"></div>
               </div>
             </div>
-            
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">Docker / Kubernetes</span>
+                <span class="text-slate-300">Docker</span>
                 <span class="text-cyan-400 font-medium">78%</span>
               </div>
               <div class="skill-bar">
                 <div class="skill-progress w-[78%] bg-cyan-500"></div>
               </div>
             </div>
-            
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">AWS / Azure</span>
-                <span class="text-orange-400 font-medium">82%</span>
+                <span class="text-slate-300">Gitlab CI/CD</span>
+                <span class="text-red-400 font-medium">75%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress w-[82%] bg-orange-500"></div>
+                <div class="skill-progress w-[75%] bg-red-500"></div>
               </div>
             </div>
-            
+
             <div class="skill-item">
               <div class="flex justify-between mb-2">
-                <span class="text-slate-300">CI/CD</span>
-                <span class="text-red-400 font-medium">80%</span>
+                <span class="text-slate-300">Terraform</span>
+                <span class="text-red-400 font-medium">40%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress w-[80%] bg-red-500"></div>
+                <div class="skill-progress w-[40%] bg-orange-500"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Tech Stack Icons -->
     <div class="text-center">
-      <h3 class="text-2xl font-semibold mb-8 text-white">Technologies que j'utilise</h3>
+      <h3 class="text-2xl font-semibold mb-8 text-white">
+        Technologies que j'utilise
+      </h3>
       <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
         <!-- Tech icons with hover effects -->
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 100ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 100ms;"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original-wordmark.svg"
+            alt="Symfony"
+            class="w-12 h-12"
+          />
         </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 200ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 100ms;"
+        >
+          <img src={sylius.src} alt="Sylius" class="w-12 h-12" />
         </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 300ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 200ms;"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+            alt="PHP"
+            class="w-12 h-12"
+          />
         </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 400ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 300ms;"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
+            alt="Gitlab CI/CD"
+            class="w-12 h-12"
+          />
         </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 500ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 400ms;"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
+            alt="Webpack"
+            class="w-12 h-12"
+          />
         </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 600ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 700ms;"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL"
+            class="w-12 h-12"
+          />
         </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 700ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-12 h-12" />
-        </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 800ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-12 h-12" />
-        </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 900ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-12 h-12" />
-        </div>
-        <div class="tech-icon animate-fade-in-up opacity-0" style="animation-delay: 1000ms;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="w-12 h-12" />
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 900ms;"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            alt="Docker"
+            class="w-12 h-12"
+          />
         </div>
       </div>
     </div>
@@ -221,53 +262,55 @@ import { Code, Database, Globe, Server, Smartphone, Tools } from 'lucide-react';
   .skill-bar {
     @apply w-full h-2 bg-slate-700 rounded-full overflow-hidden;
   }
-  
+
   .skill-progress {
     @apply h-full rounded-full transition-all duration-1000 ease-out;
     width: 0%;
   }
-  
+
   .tech-icon {
-    @apply p-4 rounded-xl bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25;
+    @apply p-4 rounded-xl bg-slate-300/50 hover:bg-slate-200/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25;
   }
-  
+
   .tech-icon img {
     @apply filter brightness-90 hover:brightness-110 transition-all duration-300;
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
       threshold: 0.3,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: "0px 0px -50px 0px",
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Animate skill bars
-          const skillBars = entry.target.querySelectorAll('.skill-progress');
+          const skillBars = entry.target.querySelectorAll(".skill-progress");
           skillBars.forEach((bar, index) => {
             setTimeout(() => {
-              bar.style.width = bar.classList.toString().match(/w-\[(\d+)%\]/)?.[1] + '%' || '0%';
+              bar.style.width =
+                bar.classList.toString().match(/w-\[(\d+)%\]/)?.[1] + "%" ||
+                "0%";
             }, index * 200);
           });
-          
+
           // Trigger fade-in animations
-          entry.target.classList.remove('opacity-0');
+          entry.target.classList.remove("opacity-0");
         }
       });
     }, observerOptions);
-    
+
     // Observe all skill categories
-    document.querySelectorAll('.skill-category').forEach(category => {
+    document.querySelectorAll(".skill-category").forEach((category) => {
       observer.observe(category);
     });
-    
+
     // Observe tech icons
-    document.querySelectorAll('.tech-icon').forEach(icon => {
+    document.querySelectorAll(".tech-icon").forEach((icon) => {
       observer.observe(icon);
     });
   });
-</script> 
+</script>

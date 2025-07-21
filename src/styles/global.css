@@ -54,7 +54,23 @@
   .container-custom {
     @apply mx-auto max-w-7xl;
   }
-  
+
+  .header-custom {
+    @apply text-sm lg:text-base;
+  }
+
+  .container-custom-footer {
+    @apply mx-auto;
+
+    @media (max-width: 768px) {
+      max-width: 70%;
+    }
+
+    @media (min-width: 768px) {
+      max-width: 90%;
+    }
+  }
+
   .btn-primary {
     @apply inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-medium text-white transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-950;
   }
