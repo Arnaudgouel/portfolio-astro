@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arnaudgouel.github.io',
+  base: '/portfolio-astro',
 
   integrations: [tailwind(), react(), sitemap()]
 });
