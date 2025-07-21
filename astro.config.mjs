@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://votre-portfolio.com', // Remplacez par votre URL réelle
+  site: 'https://arnaudgouel.github.io',
 
   integrations: [tailwind(), react(), sitemap()]
 });
