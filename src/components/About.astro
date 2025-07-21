@@ -1,5 +1,6 @@
 ---
 import { Award, Drill, Coffee, Code2 } from "lucide-react";
+import { Image } from "astro:assets";
 import avatar from "../assets/me.png";
 ---
 
@@ -83,7 +84,7 @@ import avatar from "../assets/me.png";
               class="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center"
             >
               <div class="text-6xl text-slate-600">
-                <img src={avatar.src} alt="Avatar" class="w-full h-full" />
+                <Image src={avatar} alt="Avatar" class="w-full h-full" />
               </div>
             </div>
           </div>
@@ -154,8 +155,10 @@ import avatar from "../assets/me.png";
         if (entry.isIntersecting) {
           const counters = entry.target.querySelectorAll(".text-3xl");
           counters.forEach((counter) => {
-            const target = parseInt(counter.textContent.replace(/\D/g, ""));
-            const suffix = counter.textContent.replace(/\d/g, "");
+            const target = parseInt(
+              counter.textContent?.replace(/\D/g, "") || "0",
+            );
+            const suffix = counter.textContent?.replace(/\d/g, "") || "";
             let current = 0;
             const increment = target / 30;
 

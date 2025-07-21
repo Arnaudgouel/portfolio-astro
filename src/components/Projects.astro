@@ -1,43 +1,44 @@
 ---
 import { ExternalLink, Github, Eye } from 'lucide-react';
+import { Image } from 'astro:assets';
+import haulotteLogo from '../assets/haulotte-logo.jpg';
+import pellencLogo from '../assets/pellenc-logo.png';
 
 // Données des projets (à personnaliser)
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "Plateforme e-commerce complète avec gestion des stocks, paiements intégrés et dashboard administrateur.",
-    image: "/placeholder-project-1.jpg",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    githubUrl: "https://github.com/votre-username/ecommerce",
-    liveUrl: "https://demo-ecommerce.vercel.app",
-    featured: true
+    title: "Haulotte",
+    description: "Plateforme Sylius e-commerce multinationale complète avec gestion des stocks, paiements intégrés et dashboard administrateur.",
+    image: haulotteLogo,
+    technologies: ["Sylius", "Symfony", "MariaDB"],
+    githubUrl: null,
+    liveUrl: "https://www.haulotte.fr/fr_FR/",
+    inCompany: true
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Application de gestion de tâches collaborative avec temps réel et notifications.",
-    image: "/placeholder-project-2.jpg",
-    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    githubUrl: "https://github.com/votre-username/task-app",
-    liveUrl: "https://task-manager-demo.netlify.app",
-    featured: true
+    title: "Pellenc Store Allemagne",
+    description: "Plateforme Sylius e-commerce complète avec gestion des stocks, paiements intégrés et dashboard administrateur.",
+    image: pellencLogo,
+    technologies: ["Sylius", "Symfony", "MariaDB"],
+    githubUrl: null,
+    liveUrl: "https://shop.pellenc.com/de_DE/",
+    inCompany: true
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Dashboard météo interactif avec géolocalisation et prévisions détaillées.",
-    image: "/placeholder-project-3.jpg",
-    technologies: ["Next.js", "TypeScript", "Chart.js"],
-    githubUrl: "https://github.com/votre-username/weather-app",
-    liveUrl: "https://weather-dashboard-demo.vercel.app",
-    featured: false
+    title: "Générateur de mot de passe",
+    description: "Générateur de mot de passe avec génération de mot de passe aléatoire et possibilité de choisir la longueur du mot de passe.",
+    technologies: ["Rust"],
+    githubUrl: "https://github.com/Arnaudgouel/rust-partiel",
+    liveUrl: null,
+    inCompany: false
   },
   {
     id: 4,
     title: "Social Media Analytics",
     description: "Outil d'analyse des réseaux sociaux avec visualisations et rapports automatisés.",
-    image: "/placeholder-project-4.jpg",
     technologies: ["Python", "Django", "D3.js", "Redis"],
     githubUrl: "https://github.com/votre-username/social-analytics",
     liveUrl: "https://analytics-demo.herokuapp.com",
@@ -47,7 +48,6 @@ const projects = [
     id: 5,
     title: "Real Estate Platform",
     description: "Plateforme immobilière avec recherche avancée, cartographie et visites virtuelles.",
-    image: "/placeholder-project-5.jpg",
     technologies: ["React", "Express", "MongoDB", "Mapbox"],
     githubUrl: "https://github.com/votre-username/real-estate",
     liveUrl: "https://realestate-demo.netlify.app",
@@ -57,7 +57,6 @@ const projects = [
     id: 6,
     title: "Portfolio CMS",
     description: "Système de gestion de contenu pour portfolios créatifs avec éditeur visuel.",
-    image: "/placeholder-project-6.jpg",
     technologies: ["Nuxt.js", "Strapi", "GraphQL"],
     githubUrl: "https://github.com/votre-username/portfolio-cms",
     liveUrl: "https://portfolio-cms-demo.vercel.app",
@@ -83,11 +82,8 @@ const projects = [
         <button class="filter-btn active" data-filter="all">
           Tous les projets
         </button>
-        <button class="filter-btn" data-filter="featured">
-          Projets phares
-        </button>
-        <button class="filter-btn" data-filter="web">
-          Applications web
+        <button class="filter-btn" data-filter="company">
+          Dans une entreprise
         </button>
       </div>
     </div>
@@ -98,18 +94,25 @@ const projects = [
         <div 
           class={`project-card animate-fade-in-up opacity-0 ${project.featured ? 'featured' : ''}`}
           style={`animation-delay: ${index * 100}ms;`}
-          data-category={project.featured ? 'featured web' : 'web'}
+          data-category={project.inCompany ? 'company' : 'personal'}
         >
           <div class="bg-slate-800/50 rounded-2xl overflow-hidden card-hover group h-full">
             <!-- Project Image -->
             <div class="relative overflow-hidden aspect-video bg-slate-700">
               <!-- Placeholder for project image -->
               <div class="w-full h-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                <div class="text-6xl opacity-50">🚀</div>
+              {project.image ? (
+                <Image src={project.image} alt={project.title} class="w-full h-full object-center object-cover" width={500} height={500} />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center">
+                  <div class="text-6xl opacity-50">🚀</div>
+                </div>
+              )}
               </div>
               
               <!-- Overlay with actions -->
               <div class="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center space-x-4">
+                {project.liveUrl && (
                 <a 
                   href={project.liveUrl} 
                   target="_blank" 
@@ -119,6 +122,8 @@ const projects = [
                 >
                   <Eye className="w-5 h-5 text-white" />
                 </a>
+                )}
+                {project.githubUrl && (
                 <a 
                   href={project.githubUrl} 
                   target="_blank" 
@@ -128,12 +133,13 @@ const projects = [
                 >
                   <Github className="w-5 h-5 text-white" />
                 </a>
+                )}
               </div>
               
-              {project.featured && (
+              {project.inCompany && (
                 <div class="absolute top-4 left-4">
                   <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-medium px-3 py-1 rounded-full">
-                    Projet phare
+                    En entreprise
                   </span>
                 </div>
               )}
@@ -160,6 +166,7 @@ const projects = [
               
               <!-- Links -->
               <div class="flex space-x-3">
+                {project.liveUrl && (
                 <a 
                   href={project.liveUrl} 
                   target="_blank" 
@@ -169,6 +176,8 @@ const projects = [
                   <ExternalLink className="w-4 h-4" />
                   Demo
                 </a>
+                )}
+                {project.githubUrl && (
                 <a 
                   href={project.githubUrl} 
                   target="_blank" 
@@ -178,6 +187,7 @@ const projects = [
                   <Github className="w-4 h-4" />
                   Code
                 </a>
+                )}
               </div>
             </div>
           </div>
@@ -214,7 +224,7 @@ const projects = [
     
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
+        const filter = (button as HTMLElement).dataset.filter;
         
         // Update active button
         filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -222,12 +232,12 @@ const projects = [
         
         // Filter projects
         projectCards.forEach((card, index) => {
-          const categories = card.dataset.category.split(' ');
-          const shouldShow = filter === 'all' || categories.includes(filter);
+          const categories = (card as HTMLElement).dataset.category?.split(' ') || [];
+          const shouldShow = filter === 'all' || categories.includes(filter || '');
           
           if (shouldShow) {
             card.classList.remove('hidden');
-            card.style.animationDelay = `${index * 100}ms`;
+            (card as HTMLElement).style.animationDelay = `${index * 100}ms`;
           } else {
             card.classList.add('hidden');
           }

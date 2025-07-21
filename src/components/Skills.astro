@@ -1,6 +1,7 @@
 ---
-import { Code, Database, Globe, Server, Smartphone, Tools } from "lucide-react";
+import { Code, Database, Globe, Server, Smartphone } from "lucide-react";
 import sylius from "../assets/sylius-seeklogo.svg";
+import { Image } from "astro:assets";
 ---
 
 <section id="competences" class="section-padding">
@@ -116,7 +117,6 @@ import sylius from "../assets/sylius-seeklogo.svg";
                 <div class="skill-progress w-[85%] bg-pink-500"></div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -191,66 +191,78 @@ import sylius from "../assets/sylius-seeklogo.svg";
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 100ms;"
         >
-          <img
+          <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original-wordmark.svg"
             alt="Symfony"
             class="w-12 h-12"
+            width={48}
+            height={48}
           />
         </div>
         <div
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 100ms;"
         >
-          <img src={sylius.src} alt="Sylius" class="w-12 h-12" />
+          <Image src={sylius} alt="Sylius" class="w-12 h-12" width={48} height={48} />
         </div>
         <div
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 200ms;"
         >
-          <img
+          <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
             alt="PHP"
             class="w-12 h-12"
+            width={48}
+            height={48}
           />
         </div>
         <div
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 300ms;"
         >
-          <img
+          <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
             alt="Gitlab CI/CD"
             class="w-12 h-12"
+            width={48}
+            height={48}
           />
         </div>
         <div
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 400ms;"
         >
-          <img
+          <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
             alt="Webpack"
             class="w-12 h-12"
+            width={48}
+            height={48}
           />
         </div>
         <div
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 700ms;"
         >
-          <img
+          <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
             alt="PostgreSQL"
             class="w-12 h-12"
+            width={48}
+            height={48}
           />
         </div>
         <div
           class="tech-icon animate-fade-in-up opacity-0"
           style="animation-delay: 900ms;"
         >
-          <img
+          <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
             alt="Docker"
             class="w-12 h-12"
+            width={48}
+            height={48}
           />
         </div>
       </div>
@@ -291,7 +303,7 @@ import sylius from "../assets/sylius-seeklogo.svg";
           const skillBars = entry.target.querySelectorAll(".skill-progress");
           skillBars.forEach((bar, index) => {
             setTimeout(() => {
-              bar.style.width =
+              (bar as HTMLElement).style.width =
                 bar.classList.toString().match(/w-\[(\d+)%\]/)?.[1] + "%" ||
                 "0%";
             }, index * 200);

@@ -63,7 +63,13 @@
         <a href="#competences" class="nav-link-mobile">Compétences</a>
         <a href="#projets" class="nav-link-mobile">Projets</a>
         <a href="#experience" class="nav-link-mobile">Expérience</a>
-        <a href="https://www.linkedin.com/in/arnaud-gouel/" target="_blank" class="btn-primary mt-4"> Me contacter </a>
+        <a
+          href="https://www.linkedin.com/in/arnaud-gouel/"
+          target="_blank"
+          class="btn-primary mt-4"
+        >
+          Me contacter
+        </a>
       </div>
     </div>
   </nav>
@@ -115,9 +121,9 @@
     function setActiveLink() {
       let current = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = (section as HTMLElement).offsetTop - 100;
         if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
+          current = section.getAttribute("id") || "";
         }
       });
 
