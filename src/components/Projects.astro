@@ -3,6 +3,7 @@ import { ExternalLink, Github, Eye } from 'lucide-react';
 import { Image } from 'astro:assets';
 import haulotteLogo from '../assets/haulotte-logo.jpg';
 import pellencLogo from '../assets/pellenc-logo.png';
+import syliusLogo from '../assets/sylius-logo.jpg';
 
 // Données des projets (à personnaliser)
 const projects = [
@@ -28,6 +29,16 @@ const projects = [
   },
   {
     id: 3,
+    title: "Socle Commun Sylius CMS",
+    description: "Socle commun pour les plateformes Sylius, avec gestion des stocks, paiements intégrés et dashboard administrateur et Gestion de contenu.",
+    image: syliusLogo,
+    technologies: ["Sylius", "Symfony", "MySQL", "Twig", "Doctrine ORM"],
+    githubUrl: "https://github.com/Arnaudgouel/socle-commun-sylius-cms",
+    liveUrl: null,
+    inCompany: false
+  },
+  {
+    id: 4,
     title: "Blog Multilingue Symfony",
     description: "Blog moderne et multilingue développé avec Symfony 7+, supportant le français, l'anglais et l'espagnol. Interface d'administration EasyAdmin, système de traductions personnalisé et URLs SEO-friendly.",
     technologies: ["Symfony 7+", "EasyAdmin", "PostgreSQL", "Docker", "Twig", "Doctrine ORM"],
@@ -36,7 +47,7 @@ const projects = [
     inCompany: false
   },
   {
-    id: 4,
+    id: 5,
     title: "Générateur de mot de passe",
     description: "Générateur de mot de passe avec génération de mot de passe aléatoire et possibilité de choisir la longueur du mot de passe.",
     technologies: ["Rust"],
