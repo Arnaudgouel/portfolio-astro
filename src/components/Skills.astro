@@ -11,12 +11,106 @@ import { Image } from "astro:assets";
         Mes <span class="gradient-text">Compétences</span>
       </h2>
       <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-        Un aperçu de mes compétences techniques et des technologies que je
-        maîtrise.
+        Un aperçu de mes compétences techniques et des technologies que
+        j'utilise.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    <!-- Tech Stack Icons -->
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold mb-8 text-white">
+        Technologies que j'utilise
+      </h3>
+      <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+        <!-- Tech icons with hover effects -->
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 100ms;"
+        >
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original-wordmark.svg"
+            alt="Symfony"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 100ms;"
+        >
+          <Image
+            src={sylius}
+            alt="Sylius"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 200ms;"
+        >
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+            alt="PHP"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 300ms;"
+        >
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
+            alt="Gitlab CI/CD"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 400ms;"
+        >
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
+            alt="Webpack"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 700ms;"
+        >
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+        <div
+          class="tech-icon animate-fade-in-up opacity-0"
+          style="animation-delay: 900ms;"
+        >
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            alt="Docker"
+            class="w-12 h-12"
+            width={48}
+            height={48}
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
       <!-- Frontend -->
       <div class="skill-category animate-fade-in-up opacity-0">
         <div class="bg-slate-800/50 rounded-2xl p-8 card-hover h-full">
@@ -176,94 +270,6 @@ import { Image } from "astro:assets";
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tech Stack Icons -->
-    <div class="text-center">
-      <h3 class="text-2xl font-semibold mb-8 text-white">
-        Technologies que j'utilise
-      </h3>
-      <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-        <!-- Tech icons with hover effects -->
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 100ms;"
-        >
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original-wordmark.svg"
-            alt="Symfony"
-            class="w-12 h-12"
-            width={48}
-            height={48}
-          />
-        </div>
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 100ms;"
-        >
-          <Image src={sylius} alt="Sylius" class="w-12 h-12" width={48} height={48} />
-        </div>
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 200ms;"
-        >
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-            alt="PHP"
-            class="w-12 h-12"
-            width={48}
-            height={48}
-          />
-        </div>
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 300ms;"
-        >
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
-            alt="Gitlab CI/CD"
-            class="w-12 h-12"
-            width={48}
-            height={48}
-          />
-        </div>
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 400ms;"
-        >
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
-            alt="Webpack"
-            class="w-12 h-12"
-            width={48}
-            height={48}
-          />
-        </div>
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 700ms;"
-        >
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-            alt="PostgreSQL"
-            class="w-12 h-12"
-            width={48}
-            height={48}
-          />
-        </div>
-        <div
-          class="tech-icon animate-fade-in-up opacity-0"
-          style="animation-delay: 900ms;"
-        >
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-            alt="Docker"
-            class="w-12 h-12"
-            width={48}
-            height={48}
-          />
         </div>
       </div>
     </div>
