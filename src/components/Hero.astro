@@ -38,10 +38,12 @@ const links = await getCollection("links");
         </h1>
 
         <div class="text-2xl md:text-3xl text-slate-300 mb-8 font-light">
-          <div class="">
+          <div class="code-container">
             <div>Développeur Fullstack ( () => {"{"}</div>
-            <div>return "Spécialisé en Symfony";</div>
-            <div class="typing-animation inline-block">{"})"}</div>
+            <div>return "Spécialisé en Symfony / Sylius";</div>
+            <div class="typing-animation inline-block" id="editable-code">
+              {"})"}
+            </div>
           </div>
         </div>
       </div>
@@ -157,6 +159,28 @@ const links = await getCollection("links");
 
   .typing-animation {
     border-right: 2px solid #3b82f6;
+    animation:
+      blink 1s infinite,
+      mini-bounce 0.8s ease-in-out infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .typing-animation:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-radius: 4px;
+    padding: 2px 4px;
+    animation:
+      blink 1s infinite,
+      mini-bounce 0.6s ease-in-out infinite;
+  }
+
+  .typing-animation.editing {
+    background-color: rgba(59, 130, 246, 0.2);
+    border-radius: 4px;
+    padding: 2px 4px;
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
     animation: blink 1s infinite;
   }
 
@@ -168,6 +192,16 @@ const links = await getCollection("links");
     51%,
     100% {
       border-color: #3b82f6;
+    }
+  }
+
+  @keyframes mini-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
     }
   }
 </style>
@@ -193,5 +227,76 @@ const links = await getCollection("links");
     document.querySelectorAll(".animate-fade-in-up").forEach((el) => {
       observer.observe(el);
     });
+
+    // Interactive typing event listener
+    const editableCode = document.getElementById("editable-code");
+    let isEditing = false;
+    let currentText = "})";
+
+    // Check if element exists
+    if (!editableCode) {
+      console.error("Element editable-code not found");
+      return;
+    }
+
+    // Function to enable editing mode
+    function enableEditing() {
+      if (!isEditing && editableCode) {
+        isEditing = true;
+        editableCode.contentEditable = "true";
+        editableCode.focus();
+        editableCode.classList.add("editing");
+      }
+    }
+
+    // Function to disable editing mode
+    function disableEditing() {
+      if (isEditing && editableCode) {
+        isEditing = false;
+        editableCode.contentEditable = "false";
+        editableCode.classList.remove("editing");
+      }
+    }
+
+    // Event listener for code click
+    editableCode.addEventListener("click", enableEditing);
+
+    // Event listener for keyboard keys
+    document.addEventListener("keydown", (event) => {
+      if (!isEditing || !editableCode) return;
+
+      // Escape key to exit editing mode
+      if (event.key === "Escape") {
+        disableEditing();
+        return;
+      }
+
+      // Enter key to validate
+      if (event.key === "Enter") {
+        event.preventDefault();
+        disableEditing();
+        return;
+      }
+
+      // Backspace key
+      if (event.key === "Backspace") {
+        event.preventDefault();
+        const currentContent = editableCode.textContent || "";
+        if (currentContent.length > 0) {
+          editableCode.textContent = currentContent.slice(0, -1);
+        }
+        return;
+      }
+
+      // Other character keys
+      if (event.key.length === 1) {
+        event.preventDefault();
+        const currentContent = editableCode.textContent || "";
+        editableCode.textContent = currentContent + event.key;
+      }
+    });
+
+    // Event listener for losing focus
+    editableCode.addEventListener("blur", disableEditing);
   });
 </script>
